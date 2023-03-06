@@ -1,21 +1,93 @@
 @startuml
 'https://plantuml.com/class-diagram
 
-class Player
-class Board
-class Space
-class CommandCard
-
+skinparam groupInheritance 10
 
 Player "2..6"--"1" Board
 Space "1"--"0..1" Player
-Space "130"--" 1" Board
-Player "1"--"8" CommandCard
-Laser--|>Space
-Gears--|>Space
-EnergySpace--|>Space
-PushPanel--|>Space
+Space "130"--"1" Board
+Player "1"---"8" ProgrammingCard
 
+Laser --|> Space
+Gears --|> Space
+EnergySpace --|> Space
+PushPanel --|> Space
+Antenna --|> Space
+Checkpoint --|> Space
+Pits --|> Space
+Wall --|> Space
+Player "1"---"0..*" SpecialCard
+Player "1"---"0..*" UpgradeCard
+Player "1"--"0..*" TempUpgradeCard
+Player "1"--"0..*" DamageCard
 
+/'
+
+DamageCard <|-- Spam
+DamageCard <|-- TrojanHorse
+DamageCard <|-- Worm
+DamageCard <|-- Virus
+
+ProgrammingCard <|-- MoveForward1
+ProgrammingCard <|-- MoveForward2
+ProgrammingCard <|-- MoveForward3
+ProgrammingCard <|-- TurnRight
+ProgrammingCard <|-- TurnLeft
+ProgrammingCard <|-- UTurn
+ProgrammingCard <|-- MoveBack
+ProgrammingCard <|-- PowerUp
+ProgrammingCard <|-- Repeat
+
+SpecialCard <|-- EnergyRoutine
+SpecialCard <|-- SandboxRoutine
+SpecialCard <|-- WeaselRoutine
+SpecialCard <|-- SpeedRoutine
+SpecialCard <|-- SpamFolder
+SpecialCard <|-- RepeatRoutine
+
+UpgradeCard <|-- AdminPrivilege
+UpgradeCard <|-- CorruptionWave
+UpgradeCard <|-- BlueScreenOfDeath
+UpgradeCard <|-- CrabLegs
+UpgradeCard <|-- Brakes
+UpgradeCard <|-- DeflectorShield
+UpgradeCard <|-- CacheMemory
+UpgradeCard <|-- DefragGizmo
+UpgradeCard <|-- DoubleBarrelLaser
+UpgradeCard <|-- ModularChassis
+UpgradeCard <|-- Firewall
+UpgradeCard <|-- PressorBeam
+UpgradeCard <|-- HoverUnit
+UpgradeCard <|-- RailGun
+UpgradeCard <|-- MemoryStick
+UpgradeCard <|-- RammingGear
+UpgradeCard <|-- MiniHowitzer
+UpgradeCard <|-- RearLaser
+UpgradeCard <|-- Scrambler
+UpgradeCard <|-- TractorBeam
+UpgradeCard <|-- SideArms
+UpgradeCard <|-- TrojanNeedler
+UpgradeCard <|-- Teleporter
+UpgradeCard <|-- VirusModule
+
+UpgradeCard <|-- TempUpgradeCard
+
+TempUpgradeCard <|-- Boink
+TempUpgradeCard <|-- Hack
+TempUpgradeCard <|-- EnergyRoutineUpgrade
+TempUpgradeCard <|-- ManualSort
+TempUpgradeCard <|-- MemorySwap
+TempUpgradeCard <|-- RepeatRoutineUpgrade
+TempUpgradeCard <|-- Reboot
+TempUpgradeCard <|-- SandboxRoutineUpgrade
+TempUpgradeCard <|-- Recharge
+TempUpgradeCard <|-- SpamBlocker
+TempUpgradeCard <|-- Recompile
+TempUpgradeCard <|-- SpamFolderRoutine
+TempUpgradeCard <|-- Refresh
+TempUpgradeCard <|-- SpeedRoutineUpgrade
+TempUpgradeCard <|-- WeaselRoutineUpgrade
+TempUpgradeCard <|-- Zoop
+'/
 
 @enduml

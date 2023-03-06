@@ -1,0 +1,21 @@
+@startuml
+'https://plantuml.com/activity-diagram-beta
+
+start
+
+:Change to Upgrade phase;
+if(PlayerWantsToBuy and PlayerHaveEnergyCubes) then (yes)
+    :Give player upgrade card;
+else (no)
+endif
+
+:Change to Programming phase;
+:DrawCards;
+:Player chooses what cards to use;
+
+:Change to Activation phase;
+:Move robots accordingly to cards;
+
+stop
+
+@enduml
